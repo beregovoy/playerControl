@@ -70,8 +70,6 @@ function onYouTubeIframeAPIReady() {
             if (this.videoHost == 'youtube')
                 this.originPlayer.mute();
             else {
-                this.volume = this.originPlayer.api('getVolume');
-                console.log(this.volume);
                 this.originPlayer.api('setVolume', 0);
             }
         };
@@ -79,8 +77,7 @@ function onYouTubeIframeAPIReady() {
             if (this.videoHost == 'youtube')
                 this.originPlayer.unMute();
             else {
-                console.log(this.volume);
-                this.originPlayer.api('setVolume', this.volume);
+                this.originPlayer.api('setVolume', 100);
             }
         };
         this.getDuration = function() { //have no idea why, but working only on youtube
@@ -89,7 +86,7 @@ function onYouTubeIframeAPIReady() {
             else
                 return this.originPlayer.api('getDuration');
         };
-        this.seekTo = function(seconds) { //have no idea why, but working only on youtube
+        this.seekTo = function(seconds) {
             if (this.videoHost == 'youtube')
                 return this.originPlayer.seekTo(seconds);
             else

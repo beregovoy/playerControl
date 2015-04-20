@@ -16,7 +16,7 @@ Youtube and Vimeo api. And jQuery of course
 # Installaion
 
 ```
-<script src="script.lib.js"></script>
+<script src="jquery.playerControl.js"></script>
 ```
 
 # Using
